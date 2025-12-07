@@ -21,6 +21,11 @@ export interface Experience {
 export interface StudentProfile {
   id: string;
   name: string;
+  email?: string;
+  university?: string;
+  graduationDate?: string;
+  major?: string;
+  degree?: string;
   avatar: string; // URL
   title: string;
   bio: string;
@@ -35,6 +40,66 @@ export interface JobOffer {
   company: string;
   location: string;
   salary: string;
+  type: string;
+  description: string;
+  matchScore: number; // 0-100
+  tags: string[];
+  isNew?: boolean;
+}
+
+// Public Job Listing (No match score required)
+export interface Job {
+  id: string;
+  title: string;
+  company: string;
+  location: string;
+  salary: string;
+  type: string;
+  description: string;
+  postedAt: string;
+  tags: string[];
+}
+
+export interface Candidate {
+  id: string;
+  name: string;
+  role: string;
+  avatar: string;
+  aiScore: number; // 0-100
+  status: 'New' | 'Screening' | 'Interview' | 'Offer' | 'Rejected';
+  appliedDate: string;
+  topSkills: string[];
+}
+
+export interface AnalyticsData {
+  name: string;
+  value: number;
+  [key: string]: any;
+}
+
+export interface FeedPost {
+  id: string;
+  author: string;
+  authorRole: string;
+  authorAvatar?: string; // Initials if undefined
+  timeAgo: string;
+  content: string;
+  image?: string;
+  isEmployer: boolean;
+  likes: number;
+  comments: number;
+}
+
+export interface Event {
+  id: string;
+  title: string;
+  organizer: string;
+  date: string;
+  time: string;
+  type: string;
+  category: string;
+  image?: string; // company logo or banner
+}  salary: string;
   type: 'Full-time' | 'Internship' | 'Part-time';
   description: string;
   matchScore: number; // 0-100
