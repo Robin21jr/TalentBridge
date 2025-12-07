@@ -62,6 +62,54 @@ export const JobCard: React.FC<Props> = ({ job, student }) => {
       {analysis && (
         <div className="bg-student-dark/50 p-3 rounded-lg mb-4 text-xs text-slate-300 border border-slate-700 animate-fadeIn">
           <p className="font-semibold text-student-accent mb-1 flex items-center gap-1">
+             <Cpu size={12}/> Análisis IA:
+          </p>
+          {analysis}
+        </div>
+      )}
+
+      <div className="flex gap-3 mt-2">
+        <button className="flex-1 bg-white text-student-dark font-bold py-2 rounded-xl hover:bg-slate-200 transition-colors">
+          Aplicar
+        </button>
+        <button
+          onClick={handleAnalyze}
+          disabled={loading}
+          className="bg-transparent border border-student-accent text-student-accent font-bold py-2 px-4 rounded-xl hover:bg-student-accent/10 transition-colors disabled:opacity-50"
+        >
+          {loading ? 'Pensando...' : '¿Por qué encajo?'}
+        </button>
+      </div>
+    </div>
+  );
+};      <div className="flex flex-col gap-2 mb-4">
+        <h3 className="text-xl font-bold text-white leading-tight">{job.title}</h3>
+        <span className="text-sm text-slate-400 font-medium">{job.company}</span>
+      </div>
+
+      <div className="flex flex-wrap gap-3 mb-4 text-xs text-slate-300">
+        <div className="flex items-center gap-1 bg-slate-800 px-2 py-1 rounded">
+          <MapPin size={12} /> {job.location}
+        </div>
+        <div className="flex items-center gap-1 bg-slate-800 px-2 py-1 rounded">
+          <DollarSign size={12} /> {job.salary}
+        </div>
+        <div className="flex items-center gap-1 bg-slate-800 px-2 py-1 rounded">
+          <Briefcase size={12} /> {job.type}
+        </div>
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-4">
+        {job.tags.map(tag => (
+          <span key={tag} className="text-[10px] uppercase tracking-wider text-student-secondary font-bold px-2 py-0.5 border border-student-secondary/30 rounded-full">
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      {analysis && (
+        <div className="bg-student-dark/50 p-3 rounded-lg mb-4 text-xs text-slate-300 border border-slate-700 animate-fadeIn">
+          <p className="font-semibold text-student-accent mb-1 flex items-center gap-1">
              <Cpu size={12}/> AI Analysis:
           </p>
           {analysis}
