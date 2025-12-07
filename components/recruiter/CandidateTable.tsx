@@ -44,11 +44,11 @@ export const CandidateTable: React.FC<Props> = ({ candidates }) => {
       <table className="w-full text-left text-sm text-slate-600">
         <thead className="bg-slate-50 border-b border-slate-200 text-xs uppercase font-semibold text-slate-500">
           <tr>
-            <th className="px-6 py-4">Candidate</th>
-            <th className="px-6 py-4">Applied Role</th>
-            <th className="px-6 py-4 text-center">AI Score</th>
-            <th className="px-6 py-4">Status</th>
-            <th className="px-6 py-4 text-right">Actions</th>
+            <th className="px-6 py-4">Candidato</th>
+            <th className="px-6 py-4">Rol Aplicado</th>
+            <th className="px-6 py-4 text-center">Score IA</th>
+            <th className="px-6 py-4">Estado</th>
+            <th className="px-6 py-4 text-right">Acciones</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-slate-100">
@@ -81,7 +81,7 @@ export const CandidateTable: React.FC<Props> = ({ candidates }) => {
                     <button
                       onClick={() => handleAiAnalyze(candidate)}
                       className="p-2 text-recruiter-primary hover:bg-recruiter-primary/10 rounded-full transition-colors"
-                      title="AI Analysis"
+                      title="Análisis IA"
                     >
                       <BrainCircuit size={16} />
                     </button>
@@ -97,10 +97,10 @@ export const CandidateTable: React.FC<Props> = ({ candidates }) => {
                     <div className="flex gap-4">
                        <div className="p-2 bg-white rounded border border-recruiter-primary/20 shadow-sm w-full">
                           <h4 className="text-xs font-bold text-recruiter-primary uppercase mb-2 flex items-center gap-2">
-                            <BrainCircuit size={12}/> AI Insight
+                            <BrainCircuit size={12}/> Insight IA
                           </h4>
                           {analyzing ? (
-                            <div className="text-slate-500 text-sm animate-pulse">Generating insights...</div>
+                            <div className="text-slate-500 text-sm animate-pulse">Generando insights...</div>
                           ) : (
                             <p className="text-slate-700 text-sm leading-relaxed">{aiAnalysis}</p>
                           )}
@@ -109,7 +109,7 @@ export const CandidateTable: React.FC<Props> = ({ candidates }) => {
                                 onClick={() => setSelectedCandidate(null)}
                                 className="text-xs text-slate-400 hover:text-slate-600 underline"
                              >
-                               Close
+                               Cerrar
                              </button>
                           </div>
                        </div>
