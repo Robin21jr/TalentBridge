@@ -14,7 +14,7 @@ export const AnalyticsWidgets: React.FC<Props> = ({ funnelData, skillData }) => 
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
       {/* Funnel Chart */}
       <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
-        <h3 className="text-lg font-bold text-recruiter-text mb-4">Hiring Funnel</h3>
+        <h3 className="text-lg font-bold text-recruiter-text mb-4">Embudo de Contratación</h3>
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={funnelData} layout="vertical" margin={{ left: 20 }}>
@@ -29,7 +29,7 @@ export const AnalyticsWidgets: React.FC<Props> = ({ funnelData, skillData }) => 
 
       {/* Skills Distribution */}
       <div className="bg-white p-6 rounded-lg border border-green-100 shadow-sm">
-        <h3 className="text-lg font-bold text-recruiter-text mb-4">Candidate Skill Pool</h3>
+        <h3 className="text-lg font-bold text-recruiter-text mb-4">Habilidades de Candidatos</h3>
         <div className="h-64 flex items-center justify-center">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
